@@ -48,11 +48,15 @@ document.querySelector('.btn.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(typeof guess);
 
+  // When score is larger than 1 (Valid)
   if (score > 1) {
     if (!guess) {
       // When there is no guess!
-      document.querySelector('.message').textContent =
-        'No number found! Type again';
+      document.querySelector('.message').innerHTML = `
+  <div style = "display: inline-block; text-indent: 0; padding-left: 0;">
+    No number found!<br><div style = "margin-top: 10px">Type again</div>
+  </div>
+`;
     }
 
     // When the guess is correct
@@ -78,22 +82,18 @@ document.querySelector('.btn.check').addEventListener('click', function () {
       }
     }
 
-    // When guess is larger than target
-    else if (guess > randomInt) {
+    // When guess is not equal to the target
+    else if (guess !== randomInt) {
       document.querySelector('.message').textContent =
-        '📈 Too high, try again!';
-      score -= 1;
-      document.querySelector('.score').textContent = score;
-
-      // When guess is smaller than target
-    } else if (guess < randomInt) {
-      document.querySelector('.message').textContent = '📉 Too low, try again!';
+        guess > randomInt
+          ? '📈 Too high, try again!'
+          : '📉 Too low, try again!';
       score -= 1;
       document.querySelector('.score').textContent = score;
     }
   }
 
-  // When the score is 0
+  // When the score is 0 (Invalid)
   else {
     // Change CSS Theme
     document.querySelector('body').style.backgroundColor = '#ff2c2c';
