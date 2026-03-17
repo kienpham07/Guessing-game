@@ -1,7 +1,7 @@
 # Guess My Number
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-Prototype-orange.svg)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## Description
 
@@ -58,3 +58,5 @@ README.md
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Dev: Kien Pham (kienpham07)
